@@ -1,11 +1,18 @@
-import React from 'react';
-import { View, Text } from 'react-native';
+import React, { useState } from 'react';
+import { View, Text, TextInput } from 'react-native';
+
+import { styles } from './styles';
 
 export function SignIn() {
+    const [text, setText] = useState('');
     return (
-        <View>
+        <View style={styles.container}>
+            <TextInput
+                style={styles.input}
+                onChangeText={setText}
+            />
             <Text>
-                Screen SignIn
+                Você digitou: {text}
             </Text>
         </View>
     );
